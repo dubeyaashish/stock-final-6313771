@@ -10,12 +10,14 @@ export default function Home() {
       <h1>Suppliers</h1>
       <p>Supplier Page for final exam.</p>
 
-      <Link href="/about">
-        <button>About</button>
-      </Link>
-      <Link href="/Supplier">
-        <button>Suppliers List</button>
-      </Link>
+      <div className="button-container">
+        <Link href="/about">
+          <button>About</button>
+        </Link>
+        <Link href="/Supplier">
+          <button className="lavender">Suppliers List</button>
+        </Link>
+      </div>
 
       <style jsx>{`
         .center {
@@ -32,12 +34,20 @@ export default function Home() {
           font-size: 4rem;
           margin-bottom: 2rem;
           color: #333;
+          font-family: Avantgarde;
         }
 
         p {
           font-size: 1.5rem;
           margin-bottom: 2rem;
           color: #666;
+        }
+
+        .button-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
         }
 
         button {
@@ -54,6 +64,14 @@ export default function Home() {
 
         button:hover {
           background-color: #666;
+        }
+        button.lavender {
+          background-color: lavender;
+          color: #333;
+        }
+        
+        button.lavender:hover {
+          background-color: #b6a2de;
         }
       `}</style>
     </div>
