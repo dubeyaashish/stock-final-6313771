@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+
 export default function AddSupplierPage() {
     const { register, handleSubmit } = useForm();
     const [data, setData] = useState("");
@@ -33,20 +34,63 @@ export default function AddSupplierPage() {
     }
 
     return (
-        <div className="container">
-            <h1 className="title">New Supplier</h1>
-            <form onSubmit={handleSubmit(saveSupplier)} className="form">
-                <label htmlFor="name">Supplier name</label><br />
-                <input id="name" {...register("name", { required: true })} placeholder="Supplier Name" /><br />
-
-                <label htmlFor="address">Address</label>
-                <input id="address" {...register("address", { required: true })} placeholder="Address"/>
-                <br />
-                <label htmlFor="phonenumber">Phone number</label><br />
-                <input id="phonenumber" {...register("phonenumber")} placeholder=" Phone number" /><br />
-                <input type="submit" className="button" />
-                <p>{data}</p><br />
-            </form>
-        </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+        <form
+          onSubmit={handleSubmit(saveSupplier)}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            border: "1px solid #ccc",
+            padding: "20px",
+            borderRadius: "5px",
+            boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+          }}
+        >
+          <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
+            New Supplier
+          </h1>
+          <label htmlFor="name">Supplier name</label>
+          <input
+            id="name"
+            {...register("name", { required: true })}
+            placeholder="Supplier Name"
+            style={{ margin: "10px 0", padding: "10px" }}
+          />
+  
+          <label htmlFor="address">Address</label>
+          <input
+            id="address"
+            {...register("address", { required: true })}
+            placeholder="Address"
+            style={{ margin: "10px 0", padding: "10px" }}
+          />
+  
+          <label htmlFor="phonenumber">Phone number</label>
+          <input
+            id="phonenumber"
+            {...register("phonenumber")}
+            placeholder="Phone number"
+            style={{ margin: "10px 0", padding: "10px" }}
+          />
+          <button
+            type="submit"
+            style={{
+              margin: "20px 0",
+              padding: "10px 20px",
+              borderRadius: "5px",
+              backgroundColor: "#007aff",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Save Supplier
+          </button>
+          <p style={{ textAlign: "center" }}>{data}</p>
+        </form>
+      </div>
+        
     );
 }
+

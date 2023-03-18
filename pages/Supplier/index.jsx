@@ -68,7 +68,8 @@ export default function Home({ suppliers }) {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background-color: #2e2e2e;
+          background-color: #ac3e31;
+          font-family: Arial;
           color: white;
           padding: 1rem;
         }

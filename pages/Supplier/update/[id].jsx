@@ -60,25 +60,33 @@ export default function Supplier({ supplier }) {
       </Head>
 
 <p>{JSON.stringify(supplier)}</p>
-      <div style={{ margin: '1rem' }}>
-        <form onSubmit={handleSubmit(updateBlog)}>
-          <h1>Update Supplier</h1>
-          <label htmlFor="name">Name</label><br />
-          <input id="name" {...register("name", { required: true })}
-            placeholder="Supplier Name"
-          /><br />
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+  <form onSubmit={handleSubmit(updateBlog)} style={{ width: '30rem', padding: '2rem', border: '1px solid #ccc', borderRadius: '4px' }}>
+    <h1 style={{ marginBottom: '2rem', textAlign: 'center' }}>Update Supplier</h1>
+    <div style={{ marginBottom: '1rem' }}>
+      <label htmlFor="name" style={{ display: 'block', marginBottom: '.5rem' }}>Name</label>
+      <input id="name" {...register("name", { required: true })} placeholder="Supplier Name" style={{ width: '100%', padding: '.5rem', borderRadius: '4px', border: '1px solid #ccc' }} />
+    </div>
 
-          <label htmlFor="address">Address</label>
-          <input id="address" {...register("address", { required: true })} placeholder="Address"/>
-          <label htmlFor="phonenumber">Phone number</label><br />
-          <input id="phonenumber" {...register("phonenumber")} placeholder="phone number"
-            /><br />
-          <input type="submit" />
-          <p>{data}</p><br />
-        </form>
-      </div>
+    <div style={{ marginBottom: '1rem' }}>
+      <label htmlFor="address" style={{ display: 'block', marginBottom: '.5rem' }}>Address</label>
+      <input id="address" {...register("address", { required: true })} placeholder="Address" style={{ width: '100%', padding: '.5rem', borderRadius: '4px', border: '1px solid #ccc' }} />
+    </div>
 
-      <Link href="/Supplier">Back</Link>
+    <div style={{ marginBottom: '1rem' }}>
+      <label htmlFor="phonenumber" style={{ display: 'block', marginBottom: '.5rem' }}>Phone number</label>
+      <input id="phonenumber" {...register("phonenumber")} placeholder="Phone number" style={{ width: '100%', padding: '.5rem', borderRadius: '4px', border: '1px solid #ccc' }} />
+    </div>
+
+    <div style={{ textAlign: 'center' }}>
+      <input type="submit" style={{ padding: '.5rem 2rem', borderRadius: '4px', border: 'none', backgroundColor: '#0070f3', color: '#fff', cursor: 'pointer' }} />
+    </div>
+
+    <p style={{ textAlign: 'center', marginTop: '1rem' }}>{data}</p>
+  </form>
+</div>
+
+<Link href="/Supplier">Back</Link>
     </>
   )
 }
